@@ -5,9 +5,14 @@ import org.springframework.stereotype.Service;
 import ru.itsjava.dao.UserDao;
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserDao userDao;
+
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+        System.out.println("UserServiceImpl");
+    }
 
     @Override
     public String sayHey(String name) {
